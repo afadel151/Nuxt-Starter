@@ -13,10 +13,16 @@
 * **🧩 [Shadcn UI](https://www.shadcn-vue.com/)**: Beautiful, accessible components
 * **🔧 [VueUse](https://vueuse.org/)**: Essential Vue Composition Utilities
 * **⚙️ TypeScript**: Strong typing for better development experience
+* **🗄️ [Prisma](https://www.prisma.io/)**: Type-safe database ORM
+* **🔐 [JWT](https://jwt.io/)**: Secure authentication
 
 ### Built-in Features
 * **🎨 Theme System**: Light/dark mode with system preference detection
-* **🔐 Authentication**: Flexible auth system with multiple provider support
+* **🔐 Authentication**: Complete auth system with:
+  - User registration and login
+  - JWT-based session management
+  - Protected routes
+  - SQLite database integration
 * **📡 API Layer**: Type-safe API client with error handling
 * **🚨 Error Handling**: Custom error pages and error boundaries
 * **📱 Responsive Design**: Mobile-first approach with Tailwind CSS
@@ -27,29 +33,45 @@
 ### Prerequisites
 - Node.js >= 18.0.0
 - Your preferred package manager (bun, npm, yarn, or pnpm)
+- SQLite (for local development)
 
 ### Installation
 
 1. **Clone the repository:**
-```bash
-git clone https://github.com/afadel151/Nuxt-Starter.git
-cd Nuxt-Starter
-```
-
+    ```bash
+    git clone https://github.com/afadel151/Nuxt-Starter.git
+    cd Nuxt-Starter
+    ```
+    
 2. **Install dependencies:**
-```bash
-# Using bun (recommended)
-bun i
+    ```bash
+    # Using bun (recommended)
+    bun i
+    
+    # Using yarn
+    yarn
+    
+    # Using npm
+    npm i
+    
+    # Using pnpm
+    pnpm install
+    ```
 
-# Using yarn
-yarn
+3. **Set up the database:**
+    ```bash
+    # Create and apply migrations
+    bunx prisma migrate dev
 
-# Using npm
-npm i
+    # Seed the database with test data
+    bun run prisma:seed
+    ```
 
-# Using pnpm
-pnpm install
-```
+4. **Configure environment variables:**
+    Create a `.env` file with:
+    ```env
+    JWT_SECRET=your-secure-secret-key
+    ```
 
 ### Development
 
@@ -108,6 +130,7 @@ pnpm preview
 ├── pages/          # Application pages
 ├── public/         # Public static files
 ├── server/         # Server-side code
+├── prisma/         # Database schema and migrations
 ├── types/          # TypeScript types
 └── utils/          # Utility functions
 ```
@@ -117,6 +140,19 @@ pnpm preview
 - `tailwind.config.ts`: Tailwind CSS configuration
 - `app.config.ts`: Application configuration
 - `components.json`: Shadcn UI configuration
+- `prisma/schema.prisma`: Database schema
+
+### Authentication
+The starter includes a complete authentication system:
+- Login at `/auth/login`
+- Signup at `/auth/signup`
+- Protected routes with middleware
+- JWT-based session management
+- SQLite database for user storage
+
+Test credentials:
+- Email: test@example.com
+- Password: password123
 
 ## 🤝 Contributing
 
@@ -140,3 +176,4 @@ This project builds upon these amazing open-source projects:
 - [Pinia](https://pinia.vuejs.org/)
 - [Shadcn UI](https://www.shadcn-vue.com/)
 - [VueUse](https://vueuse.org/)
+- [Prisma](https://www.prisma.io/)
