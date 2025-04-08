@@ -7,22 +7,29 @@
 		"dev": "nuxt dev",
 		"generate": "nuxt generate",
 		"preview": "nuxt preview",
-		"postinstall": "nuxt prepare"
+		"postinstall": "nuxt prepare",
+		"prisma:seed": "bunx prisma db seed"
+	},
+	"prisma": {
+		"seed": "bun prisma/seed.ts"
 	},
 	"dependencies": {
 		"@nuxt/image": "^1.9.0",
 		"@nuxtjs/seo": "^3.0.2",
 		"@nuxtjs/tailwindcss": "^6.13.2",
 		"@pinia/nuxt": "^0.10.1",
+		"@prisma/client": "^6.6.0",
 		"@vueuse/nuxt": "^13.0.0",
 		"axios": "^1.8.3",
+		"bcryptjs": "^3.0.2",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
+		"jsonwebtoken": "^9.0.2",
 		"lucide-vue-next": "^0.483.0",
 		"nuxt": "^3.16.0",
 		"nuxt-viewport": "^2.2.0",
 		"pinia": "^3.0.1",
-		"reka-ui": "^2.1.0",
+		"reka-ui": "^2.2.0",
 		"shadcn-nuxt": "^1.0.3",
 		"tailwind-merge": "^3.0.2",
 		"tailwindcss-animate": "^1.0.7",
